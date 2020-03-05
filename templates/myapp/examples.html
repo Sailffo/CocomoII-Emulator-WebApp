@@ -1,0 +1,377 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+	<head>
+        <title>新建模型</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+        <!-- Main CSS --> 
+        <link rel="stylesheet" href="{% static 'css/index_style.css' %}">
+
+        <!-- Font Awesome -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+  
+    <body>
+
+        <!-- Main navigation -->
+        <div id="sidebar">
+                      
+            <div class="navbar-expand-md navbar-dark"> 
+            
+                <header class="d-none d-md-block">
+                  <h1>欢迎使用</h1>
+                  <h1>COCOMOII </h1>
+                </header>
+                
+                
+                <!-- Mobile menu toggle and header -->
+                <div class="mobile-header-controls">
+                    <a class="navbar-brand d-md-none d-lg-none d-xl-none" href="#"><span>my</span>website</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#SidebarContent" aria-controls="SidebarContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+         
+                <div id="SidebarContent" class="collapse flex-column navbar-collapse">
+ 
+                        
+                    
+                    <!-- Main navigation items -->
+                    <nav class="navbar navbar-dark">
+                        <div id="mainNavbar">
+                            <ul class="flex-column mr-auto">
+                                 <li class="nav-item dropdown"> <a class="nav-link" href="{% url 'myapp:self_information' %}">{{ name.user_name }}<span class="sr-only">(current)</span></a> </li>
+                              <li class="nav-item"> <a class="nav-link" href="{% url 'myapp:index' %}">我的模型<span class="sr-only">(current)</span></a> </li>
+                                <li class="nav-item dropdown"> <a class="nav-link" href="{% url 'myapp:report' %}">报表下载<span class="sr-only">(current)</span></a> </li>
+                                <li class="nav-item dropdown"> <a class="nav-link" href="{% url 'myapp:parameter' %}">相关参考<span class="sr-only">(current)</span></a> </li>
+                              <li class="nav-item active dropdown"><a class="nav-link dropdown-toggle" href="#MenuDropdown" data-toggle="collapse" aria-controls="MenuDropdown" aria-expanded="false">新建模型</a>
+                                  <li class="nav-item dropdown"> <a class="nav-link" href="{% url 'myapp:user_logout' %}">退出<span class="sr-only">(current)</span></a> </li>
+                                <ul id="MenuDropdown" class="sub-navbar collapse flex-column">
+                                                <li class="nav-item"></li>
+                                                <li class="nav-item"></li>
+                                                <li class="nav-item"></li>
+                                                <li class="nav-item"></li>
+                                            </ul>
+                                </li>
+
+
+                                <li class="nav-item"> </li>
+
+                                <li class="nav-item"> </li>
+                            </ul>
+                        </div>   
+                    </nav>
+                
+                
+                
+                    <!-- Sidebar search form -->
+                    <form class="form-inline sidebar-search-form my-2 my-lg-0">
+</form>
+          
+                    <!-- Social icons -->
+                    <p class="sidebar-social-icons social-icons">
+                        <a href="#"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                        <a href="#"></a>
+                    </p>
+                
+                </div>
+            </div> 
+        </div>
+    
+        
+        <div id="content">
+            <div id="content-wrapper">
+                
+                <!-- Jumbtron / Slider -->
+                <div class="jumbotron-wrap">
+                    <div class="container-fluid"> </div>
+                </div>
+
+                <!-- Main content area -->
+                <main class="container-fluid">
+                    <div class="row">
+
+                        <!-- Main content -->
+                        <div class="col-sm-8">
+                          <article>
+                              <h2 class="article-title">新建仿真模型</h2>
+<table class="table">
+                <tr> </tr>
+                                    <tr> </tr>
+<tr> </tr>
+
+                            </table>
+<fieldset>
+    <form method="post">
+        {% csrf_token %}
+<div class="form-group">
+  <label for="exampleInputName">模型名字</label>
+  <input type="text" class="form-control" name="model_name" id="exampleInputName" required>
+              </div>
+              <div class="form-group">
+                  <label for="exampleInputEmail10">SIZE(代码行数(千行))</label>
+                    <input type="text" class="form-control" name="size" id="exampleInputName" required>
+              <div class="form-group">
+                  <label for="exampleInputEmail10"><b>产品属性</b></label><br>
+                  <label for="exampleInputEmail10">RELY(软件可靠性)</label>
+                    <select name="rely" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select>
+                  <label for="exampleInputEmail10">DATA(数据基大小)</label>
+                    <select name="data" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select>
+                  <label for="exampleInputEmail10">DOCU(文档要求)</label>
+                    <select name="docu" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select><label for="exampleInputEmail10">CPLX(产品复杂度)</label>
+                    <select name="cplx" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select>
+                  <label for="exampleInputEmail10">RUSE(可再用性)</label>
+                    <select name="ruse" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select>
+                  <br><label for="exampleInputEmail10"><b>人员属性</b></label><br>
+                  <label for="exampleInputEmail10">ACAP(分析员能力)</label>
+                    <select name="acap" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select>
+                  <label for="exampleInputEmail10">AEXP(应用经验)</label>
+                    <select name="aexp" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select>
+                  <label for="exampleInputEmail10">PCAP(程序员能力)</label>
+                    <select name="pcap" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select>
+                  <label for="exampleInputEmail10">PEXP(计算机平台经验)</label>
+                    <select name="pexp" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select>
+                  <label for="exampleInputEmail10">LTEX(语言和工具经验)</label>
+                    <select name="ltex" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select>
+                  <label for="exampleInputEmail10">PCON(人员稳定性)</label>
+                    <select name="pcon" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select>
+                  <br><label for="exampleInputEmail10">计算机属性</label><br>
+                  <label for="exampleInputEmail10">TIME(执行时间限制)</label>
+                    <select name="time" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select>
+                  <label for="exampleInputEmail10">STOR(主存限制)</label>
+                    <select name="stor" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select>
+                  <label for="exampleInputEmail10">PVOL(平台易变性)</label>
+                    <select name="pvol" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select>
+                  <br><label for="exampleInputEmail10"><b>项目属性</b></label><br>
+                  <label for="exampleInputEmail10">TOOL(使用的软件工具)</label>
+                    <select name="tool" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select>
+                  <label for="exampleInputEmail10">SCED(进度要求)</label>
+                    <select name="sced" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select>
+                  <label for="exampleInputEmail10">SITE(多地点开发)</label>
+                    <select name="site" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select><br>
+                  <label for="exampleInputEmail10"><b>规模度因子</b></label><br>
+                <label for="exampleInputEmail10">FLEX(开发灵活性)</label>
+                <select name="flex" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail11">RESL(体系结构和风险控制)</label>
+                  <select name="resl" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select>
+              </div>
+                                    <div class="form-group">
+                                      <label for="exampleInputEmail12">TEAM(成员合作程度)</label>
+                                        <select name="team" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select>
+                                    </div>
+              <div class="form-group">
+                <label for="exampleInputEmail13">PMAT(过程成熟度)</label>
+                <select name="pmat" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select>                    </div>
+                  <label for="exampleInputEmail10" >PREC(前例)</label>
+                    <select name="prec" id="">
+                      <option value="非常低">非常低</option>
+                      <option value="低">低</option>
+                      <option value="正常" selected>正常</option>
+                      <option value="高">高</option>
+                      <option value="非常高">非常高</option>
+                      <option value="超高">超高</option>
+                  </select>
+
+<button type="submit" class="btn btn-primary">确定</button>
+                           </div> </form></fieldset>
+<ul class="nav nav-tabs">
+              <li class="nav-item"> </li>
+                            </ul>
+                          </article>
+                        </div>
+
+
+                        <!-- Sidebar -->
+                        <aside class="col-sm-4">
+                            <div class="sidebar-box"> </div>
+
+                            <div class="sidebar-box sidebar-box-bg">
+                              <h4>关于我们</h4>
+                              <p>云南大学</p>
+                              <p>软件学院2017级</p>
+                              <p>软件工程专业 </p>
+                            </div>
+<div class="sidebar-box"> </div>
+                        </aside> 
+
+
+                    </div> 
+                </main>
+
+
+                <!-- Footer -->
+                <div class="container-fluid footer-container">
+                    <footer class="footer">
+<div class="footer-bottom">
+  <p class="text-center">Copyright &copy; 2019.云南大学软件学院</p>
+  <p class="text-center"><a href="#">Back to top</a></p>
+                      </div>
+
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootcamp JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery-3.2.1.slim.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+    </body>
+</html>

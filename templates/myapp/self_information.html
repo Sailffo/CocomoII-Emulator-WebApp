@@ -1,0 +1,160 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+	<head>
+        <title>个人信息</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+        <!-- Main CSS --> 
+        <link rel="stylesheet" href="{% static 'css/index_style.css' %}">
+
+        <!-- Font Awesome -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+  
+    <body>
+
+        <!-- Main navigation -->
+        <div id="sidebar">
+                      
+            <div class="navbar-expand-md navbar-dark"> 
+            
+                <header class="d-none d-md-block">
+                  <h1>欢迎使用</h1>
+                  <h1>COCOMOII</h1>
+                </header>
+                
+                
+                <!-- Mobile menu toggle and header -->
+                <div class="mobile-header-controls">
+                    <a class="navbar-brand d-md-none d-lg-none d-xl-none" href="#"><span></span></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#SidebarContent" aria-controls="SidebarContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+         
+                <div id="SidebarContent" class="collapse flex-column navbar-collapse">
+ 
+                        
+                    
+                    <!-- Main navigation items -->
+                    <nav class="navbar navbar-dark">
+                        <div id="mainNavbar">
+                            <ul class="flex-column mr-auto">
+                              <li class="nav-item dropdown"> <a class="nav-link" href="{% url 'myapp:index' %}">我的模型<span class="sr-only">(current)</span></a> </li>
+                                <li class="nav-item dropdown"> <a class="nav-link" href="{% url 'myapp:report' %}">报表下载<span class="sr-only">(current)</span></a> </li>
+                                <li class="nav-item dropdown"> <a class="nav-link" href="{% url 'myapp:parameter' %}">相关参考<span class="sr-only">(current)</span></a> </li>
+                              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="{% url 'myapp:example' %}" data-toggle="collapse" aria-controls="MenuDropdown" aria-expanded="false">新建模型</a>
+                                <li class="nav-item dropdown"> <a class="nav-link" href="{% url 'myapp:user_logout' %}">退出<span class="sr-only">(current)</span></a> </li>
+                                <ul id="MenuDropdown" class="sub-navbar collapse flex-column">
+                                                <li class="nav-item"></li>
+                                                <li class="nav-item"></li>
+                                                <li class="nav-item"></li>
+                                                <li class="nav-item"></li>
+                                            </ul>
+                                </li>
+
+                                <li class="nav-item"> </li>
+
+                                <li class="nav-item"> </li>
+
+                                <li class="nav-item"> </li>
+                            </ul>
+                        </div>   
+                    </nav>
+                
+                
+                
+                    <!-- Sidebar search form -->
+                    <form class="form-inline sidebar-search-form my-2 my-lg-0">
+</form>
+          
+                    <!-- Social icons -->
+                </div>
+            </div> 
+        </div>
+    
+        
+        <div id="content">
+            <div id="content-wrapper">
+
+                <!-- Jumbtron / Slider -->
+                <div class="jumbotron-wrap">
+                    <div class="container-fluid">
+                        <div id="mainCarousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active"> </div>
+
+                                <div class="carousel-item"> </div>
+                            </div>
+
+                            <a class="carousel-control-prev" href="#mainCarousel" role="button" data-slide="prev">
+                                    <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#mainCarousel" role="button" data-slide="next">
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main content area -->
+                <main class="container-fluid">
+                    <div class="row">
+
+                        <!-- Main content -->
+                        <div class="col-md-8">
+                            <article>
+                              <h2 class="article-title">个人信息</h2>
+                              <p class="article-meta">&nbsp;</p>
+                                <p>账号：{{ t }}</p>
+                                <p>真实名字：{{ user.user_name }}</p>
+                                <p>邮箱：</p>
+                                <p>电话：</p>
+
+</article>
+<!-- Example pagination Bootstrap component -->
+
+                        </div>
+
+
+                        <!-- Sidebar -->
+                        <aside class="col-md-4">
+                            <div class="sidebar-box"> </div>
+
+                            <div class="sidebar-box sidebar-box-bg">
+                              <h4>关于我们</h4>
+                              <p>云南大学</p>
+                                <p>软件学院 2017级</p>
+                                <p>软件工程专业 </p>
+                            </div>
+</aside> 
+
+
+                    </div> 
+                </main>
+
+
+                <!-- Footer -->
+                <div class="container-fluid footer-container">
+                    <footer class="footer">
+<div class="footer-bottom">
+  <p class="text-center">Copyright &copy; 2019.云南大学软件学院</p>
+  <p class="text-center"><a href="#">Back to top</a></p>
+                        </div>
+                    </footer>
+                </div> 
+            </div>
+        </div>
+
+        <!-- Bootcamp JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery-3.2.1.slim.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+    </body>
+</html>
