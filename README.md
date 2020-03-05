@@ -2,9 +2,10 @@
 cocomoII成本预测web应用
 
 采用django框架，版本2.0.3
+
 数据库采用django自带sqlite3
 
-用户新建的模型会依赖于管理员设置的参数值，因而在初始化数据库前需要将DataModel注释掉，即models文件中的28-83行，admin文件中的6-26行，
+用户新建的模型依赖于管理员设置的参数值，因而在初始化数据库前需要将DataModel注释掉，即models文件中的28-83行，admin文件中的6-26行，
 
 注释掉之后再执行python manage.py makemigrations和python manage.py migrate进行数据库迁移,
 
